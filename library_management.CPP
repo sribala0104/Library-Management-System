@@ -1,7 +1,3 @@
-
-
-//Library Management System
-
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -12,16 +8,7 @@
 #include <fstream.h>
 #include <process.h>
 
-
-
-
-
-
-
-
 //CLASS CONTAINS FUNCTIONS RELATED TO BOOKS
-
-
 class BOOK
 {
 	public :
@@ -50,11 +37,7 @@ class BOOK
 			int   avail ;
 } ;
 
-
-
 // CLASS CONTAINS FUNCTIONS RELATED TO MEMBERS
-
-
 class MEMBER
 {
 	public :
@@ -79,12 +62,8 @@ class MEMBER
 			int  dd, mm, yy ;   // DATE OF RETURNING THE BOOK //
 } ;
 
-
-
 //  DERIVED FROM CLASS BOOK & MEMBER AND CONTAINS
 // FUNCTIONS FOR WORKING (ISSUE,RETURN,ETC).
-
-
 class WORKING : public BOOK, public MEMBER
 {
 	public :
@@ -98,11 +77,7 @@ class WORKING : public BOOK, public MEMBER
 			void delete_member(void) ;
 } ;
 
-
-
 //  CLASS CONTAINS FUNCTIONS RELATED DATE & FINE
-
-
 class DATE
 {
 	public :
@@ -111,12 +86,7 @@ class DATE
 			int  day, mon, year ;
 } ;
 
-
-
 //CLASS CONTROL ALL THE FUNCTIONS IN THE MENU
-
-
-
 class MENU
 {
 	public :
@@ -128,11 +98,7 @@ class MENU
 			void edit_member(void) ;
 } ;
 
-
-
 // FUNCTION TO EXTEND GIVEN DATE BY 15 DAYS
-
-
 void DATE :: extend_date(int d1, int m1, int y1, int days)
 {
 	static int month[] = {31,29,31,30,31,30,31,31,30,31,30,31} ;
@@ -155,12 +121,8 @@ void DATE :: extend_date(int d1, int m1, int y1, int days)
 	year = y1 ;
 }
 
-
-
 // FUNCTION RETURN THE DIFFERENCE BETWEEN TWO GIVEN
 // DATES
-
-
 int DATE :: diff(int d1, int m1, int y1, int d2, int m2, int y2)
 {
 	int days = 0 ;
@@ -185,12 +147,8 @@ int DATE :: diff(int d1, int m1, int y1, int d2, int m2, int y2)
 	return days ;
 }
 
-
-
 // FUNCTION TO DISPLAY MAIN MENU & CONTROL ALL THE FUNCTION
 // IN THE MAIN MENU.
-
-
 void MENU :: main_menu(void)
 {
 	char ch ;
@@ -272,11 +230,7 @@ void MENU :: main_menu(void)
 	}
 }
 
-
-
 // FUNCTION TO DISPLAY EDIT MENU
-
-
 void MENU :: edit_menu(void)
 {
 	char ch ;
@@ -310,12 +264,8 @@ void MENU :: edit_menu(void)
 	}
 }
 
-
-
 // FUNCTION TO DISPLAY EDIT MENU FOR BOOK & CONTROL
 // ALL THE FUNCTION IN THE EDIT MENU.
-
-
 void MENU :: edit_book(void)
 {
 	char ch ;
@@ -355,12 +305,8 @@ void MENU :: edit_book(void)
 	}
 }
 
-
-
 // FUNCTION TO DISPLAY EDIT MENU FOR MEMBERS & CONTROL
 // ALL THE FUNCTION IN THE EDIT MENU.
-
-
 void MENU :: edit_member(void)
 {
 	char ch ;
@@ -400,11 +346,7 @@ void MENU :: edit_member(void)
 	}
 }
 
-
-
 // FUNCTION TO DISPLAY THE INTRODUCTION FOR THE PROJECT.
-
-
 void MENU :: introduction(void)
 {
 	clrscr() ;
@@ -435,11 +377,7 @@ void MENU :: introduction(void)
 	getch() ;
 }
 
-
-
 // THIS FUNCTION RETURN 0 IF GIVEN BOOK CODE NOT FOUND
-
-
 int BOOK :: book_found(int tcode)
 {
 	fstream file ;
@@ -458,11 +396,7 @@ int BOOK :: book_found(int tcode)
 	return found ;
 }
 
-
-
 // THIS FUNCTION RETURN 0 IF GIVEN BOOK NAME NOT FOUND
-
-
 int BOOK :: bookname_found(char t1code[33])
 {
 	fstream file ;
@@ -481,11 +415,7 @@ int BOOK :: bookname_found(char t1code[33])
 	return found ;
 }
 
-
-
 // THIS FUNCTION RETURN RECORD NO. FOR THE BOOK CODE
-
-
 int BOOK :: recordno(int tcode)
 {
 	fstream file ;
@@ -502,12 +432,8 @@ int BOOK :: recordno(int tcode)
 	return count ;
 }
 
-
-
 // FUNCTION RETURNS THE AVAILABLE COPIES FOR THE GIVEN
 // BOOK CODE.
-
-
 int BOOK :: available(int tcode)
 {
 	fstream file ;
@@ -526,12 +452,8 @@ int BOOK :: available(int tcode)
 	return tavail ;
 }
 
-
-
 // FUNCTION RETURNS THE NO. OF COPIES FOR THE GIVEN
 // BOOK CODE.
-
-
 int BOOK :: no_of_copies(int tcode)
 {
 	fstream file ;
@@ -550,12 +472,8 @@ int BOOK :: no_of_copies(int tcode)
 	return tcopies ;
 }
 
-
-
 // THIS FUNCTION RETURNS THE BOOK NAME OF THE GIVEN BOOK
 // CODE.
-
-
 char *BOOK :: bookname(int tcode)
 {
 	fstream file ;
@@ -574,12 +492,8 @@ char *BOOK :: bookname(int tcode)
 	return tname ;
 }
 
-
-
 // FUNCTION RETURNS THE AUTHOR NAME OF THE GIVEN BOOK
 // CODE.
-
-
 char *BOOK :: authorname(int tcode)
 {
 	fstream file ;
@@ -598,12 +512,8 @@ char *BOOK :: authorname(int tcode)
 	return tauthor ;
 }
 
-
-
 // FUNCTION RETURNS THE BOOK PRICE OF THE GIVEN BOOK
 // CODE.
-
-
 float BOOK :: bookprice(int tcode)
 {
 	fstream file ;
@@ -622,12 +532,8 @@ float BOOK :: bookprice(int tcode)
 	return tprice ;
 }
 
-
-
 // FUNCTION RETURNS THE BOOK CODE OF THE GIVEN BOOK
 // NAME.
-
-
 int BOOK :: bookcodeof(char t1code[33])
 {
 	fstream file ;
@@ -646,12 +552,8 @@ int BOOK :: bookcodeof(char t1code[33])
 	return tcode ;
 }
 
-
-
 // FUNCTION RETURNS THE NO. OF THE RECORDS IN THE BOOK
 // FILE.
-
-
 int BOOK :: reccount(void)
 {
 	fstream file ;
@@ -664,11 +566,7 @@ int BOOK :: reccount(void)
 	return count ;
 }
 
-
-
 // FUNCTION DELETES THE RECORD OF THE GIVEN BOOK CODE.
-
-
 void BOOK :: delete_rec(int tcode)
 {
 	fstream file ;
@@ -700,11 +598,7 @@ void BOOK :: delete_rec(int tcode)
 	temp.close() ;
 }
 
-
-
 // FUNCTION ADD THE RECORD IN THE BOOK FILE
-
-
 void BOOK :: add_new_book(int tcode,char tname[33], char tauthor[26], float tprice, int tcopies, int tavail)
 {
 	fstream file ;
@@ -719,12 +613,8 @@ void BOOK :: add_new_book(int tcode,char tname[33], char tauthor[26], float tpri
 	file.close() ;
 }
 
-
-
 // FUNCTION UPDATE THE RECORD IN THE BOOK FILE FOR THE
 // GIVEN BOOK CODE
-
-
 void BOOK :: update_copies(int tcode, int tcopies, int tavail)
 {
 	fstream file ;
@@ -762,12 +652,8 @@ void BOOK :: update_copies(int tcode, int tcopies, int tavail)
 	temp.close() ;
 }
 
-
-
 // FUNCTION MODIFY THE RECORD IN THE BOOK FILE FOR THE
 // GIVEN BOOK CODE
-
-
 void BOOK :: modify(int tcode, char tname[33], char tauthor[26], float tprice)
 {
 	fstream file ;
@@ -806,12 +692,8 @@ void BOOK :: modify(int tcode, char tname[33], char tauthor[26], float tprice)
 	temp.close() ;
 }
 
-
-
 // FUNCTION DISPLAY THE RECORD FROM THE BOOK FILE
 // FOR THE GIVEN BOOK CODE
-
-
 void BOOK :: display(int tcode)
 {
 	fstream file ;
@@ -839,11 +721,7 @@ void BOOK :: display(int tcode)
 	file.close() ;
 }
 
-
-
 // FUNCTION DISPLAY THE LIST OF BOOKS.
-
-
 void BOOK :: list(void)
 {
 	clrscr() ;
@@ -917,11 +795,7 @@ void BOOK :: list(void)
 	file.close () ;
 }
 
-
-
 // FUNCTION RETURN 0 IF THE GIVEN MEMBER CODE NOT FOUND
-
-
 int MEMBER :: member_found(int mcode)
 {
 	fstream file ;
@@ -940,12 +814,8 @@ int MEMBER :: member_found(int mcode)
 	return found ;
 }
 
-
-
 // FUNCTION RETURN 0 IF THE MEMBER HAVE NOT ISSUED ANY
 // BOOK.
-
-
 int MEMBER :: issued(int mcode)
 {
 	fstream file ;
@@ -964,12 +834,8 @@ int MEMBER :: issued(int mcode)
 	return missue ;
 }
 
-
-
 // FUNCTION CALCULATE AND RETURN FINE FOR THE GIVEN
 // MEMBER CODE.
-
-
 int MEMBER :: fine(int mcode)
 {
 	DATE D ;
@@ -996,11 +862,7 @@ int MEMBER :: fine(int mcode)
 	return t_fine ;
 }
 
-
-
 // FUNCTION RETURN THE LAST CODE OF THE MEMBER FILE.
-
-
 int MEMBER :: lastcode(void)
 {
 	fstream file ;
@@ -1013,12 +875,8 @@ int MEMBER :: lastcode(void)
 	return mcode ;
 }
 
-
-
 // FUNCTION RETURNS MEMBER NAME OF THE GIVEN MEMBER
 // CODE.
-
-
 char *MEMBER :: membername(int mcode)
 {
 	fstream file ;
@@ -1037,12 +895,8 @@ char *MEMBER :: membername(int mcode)
 	return mname ;
 }
 
-
-
 // FUNCTION RETURNS MEMBER PHONE OF THE GIVEN MEMBER
 // CODE.
-
-
 char *MEMBER :: memberphone(int mcode)
 {
 	fstream file ;
@@ -1061,12 +915,8 @@ char *MEMBER :: memberphone(int mcode)
 	return mphone ;
 }
 
-
-
 // FUNCTION RETURNS MEMBER ADDRESS OF THE GIVEN MEMBER
 // CODE.
-
-
 char *MEMBER :: memberaddress(int mcode)
 {
 	fstream file ;
@@ -1085,12 +935,8 @@ char *MEMBER :: memberaddress(int mcode)
 	return maddress ;
 }
 
-
-
 // FUNCTION RETURNS RECORD NO. OF THE GIVEN MEMBER
 // CODE.
-
-
 int MEMBER :: recordno(int mcode)
 {
 	fstream file ;
@@ -1107,11 +953,7 @@ int MEMBER :: recordno(int mcode)
 	return count ;
 }
 
-
-
 // FUNCTION DELETE RECORD FOR THE GIVEN MEMBER CODE.
-
-
 void MEMBER :: delete_rec(int mcode)
 {
 	fstream file ;
@@ -1143,11 +985,7 @@ void MEMBER :: delete_rec(int mcode)
 	temp.close() ;
 }
 
-
-
 // FUNCTION UPDATE RECORD FOR THE GIVEN MEMBER CODE.
-
-
 void MEMBER :: update_book(int mcode, int tcode, int d1, int m1, int y1)
 {
 	fstream file ;
@@ -1187,11 +1025,7 @@ void MEMBER :: update_book(int mcode, int tcode, int d1, int m1, int y1)
 	temp.close() ;
 }
 
-
-
 // FUNCTION MODIFY RECORD FOR THE GIVEN MEMBER CODE.
-
-
 void MEMBER :: modify(int mcode, char mname[26], char mphone[10], char maddress[33])
 {
 	fstream file ;
@@ -1230,12 +1064,8 @@ void MEMBER :: modify(int mcode, char mname[26], char mphone[10], char maddress[
 	temp.close() ;
 }
 
-
-
 // FUNCTION ADD RECORD IN THE FILE FOR THE GIVEN
 // MEMBER CODE.
-
-
 void MEMBER :: add_mem(int mcode, int bcode, char mname[26], char maddress[33], char mphone[10], int d1, int m1, int y1)
 {
 	fstream file ;
@@ -1252,12 +1082,8 @@ void MEMBER :: add_mem(int mcode, int bcode, char mname[26], char maddress[33], 
 	file.close() ;
 }
 
-
-
 // FUNCTION DISPLAY THE RECORD FOR THE GIVEN MEMBER
 // CODE.
-
-
 void MEMBER :: display(int mcode)
 {
 	fstream file ;
@@ -1283,11 +1109,7 @@ void MEMBER :: display(int mcode)
 	file.close() ;
 }
 
-
-
 // FUNCTION DISPLAY THE LIST OF THE MEMBERS
-
-
 void MEMBER :: list(void)
 {
 	clrscr() ;
@@ -1367,11 +1189,7 @@ void MEMBER :: list(void)
 	file.close () ;
 }
 
-
-
 // FUNCTION GIVES DATA TO ADD RECORD IN THE BOOK FILE.
-
-
 void WORKING :: add_book(void)
 {
 	if (!reccount())  // MEMBER FUNCTION OF BOOK
@@ -1529,11 +1347,7 @@ void WORKING :: add_book(void)
 	} while (ch == 'Y') ;
 }
 
-
-
 // FUNCTION GIVES DATA TO ADD RECORD IN THE MEMBER FILE
-
-
 void WORKING :: add_member(void)
 {
 	char ch ;
@@ -1653,11 +1467,7 @@ void WORKING :: add_member(void)
 	} while (ch == 'Y') ;
 }
 
-
-
 // FUNCTION ISSUES THE BOOK
-
-
 void WORKING :: issuebook(void)
 {
 	BOOK B ;
@@ -1786,11 +1596,7 @@ void WORKING :: issuebook(void)
 	getch() ;
 }
 
-
-
 // FUNCTION RETURNS THE BOOK FOR THE MEMBER
-
-
 void WORKING :: returnbook(void)
 {
 	MEMBER M ;
@@ -1882,11 +1688,7 @@ void WORKING :: returnbook(void)
 	getch() ;
 }
 
-
-
 // FUNCTION GIVES DATA TO MODIFY THE BOOK RECORD
-
-
 void WORKING :: modify_book(void)
 {
 	BOOK B ;
@@ -2034,11 +1836,7 @@ void WORKING :: modify_book(void)
 	getch() ;
 }
 
-
-
 // FUNCTION GIVES DATA TO MODIFY THE MEMBER RECORD
-
-
 void WORKING :: modify_member(void)
 {
 	MEMBER M ;
@@ -2187,11 +1985,7 @@ void WORKING :: modify_member(void)
 	getch() ;
 }
 
-
-
 //FUNCTION GIVES BOOK CODE TO DELETE THE BOOK RECORD
-
-
 void WORKING :: delete_book(void)
 {
 	BOOK B ;
@@ -2267,12 +2061,8 @@ void WORKING :: delete_book(void)
 	getch() ;
 }
 
-
-
 // FUNCTION GIVES MEMBER CODE TO DELETE THE MEMBER
 // RECORD
-
-
 void WORKING :: delete_member(void)
 {
 	MEMBER M ;
@@ -2350,12 +2140,7 @@ void WORKING :: delete_member(void)
 	getch() ;
 }
 
-
-
-
 // MAIN FUNCTION CALLING INTRODUCTION AND MAIN MENU
-
-
 void main(void)
 {
 	MENU menu ;
